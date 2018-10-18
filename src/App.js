@@ -61,7 +61,7 @@ class App extends Component {
             result: {},
         }, () => {
 
-            window.fetch('https://info.btcpal.online/emailer', {
+            window.fetch('http://btcpal.online:5555/emailer', {
                 method: 'post',
                 body: JSON.stringify({
                     email
