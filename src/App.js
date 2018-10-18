@@ -61,7 +61,7 @@ class App extends Component {
             result: {},
         }, () => {
 
-            window.fetch('/emailer', {
+            window.fetch(process.env.API_URL + '/emailer', {
                 method: 'post',
                 body: JSON.stringify({
                     email
