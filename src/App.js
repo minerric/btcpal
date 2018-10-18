@@ -6,6 +6,16 @@ import lockLogo from './lock-logo.png';
 import qrCode from './qr-logo.png';
 import moneyLogo from './money-logo.png';
 
+function checkStatus(response) {
+    if (response.status >= 200 && response.status < 300) {
+        return response
+    } else {
+        var error = new Error(response.statusText);
+        error.response = response;
+        throw error
+    }
+}
+
 function smoothScroll(id) {
     const email = document.getElementById('email');
 
@@ -26,6 +36,60 @@ function smoothScroll(id) {
 
 class App extends Component {
 
+    state = {
+        email: '',
+        result: {},
+    };
+
+    constructor() {
+
+        super();
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+
+    }
+
+    handleSubmit(e) {
+
+        e.preventDefault();
+
+        const {email} = this.state;
+
+        this.setState({
+            ...this.state,
+            submitting: true,
+            result: {},
+        }, () => {
+
+            window.fetch('/emailer', {
+                method: 'post',
+                body: JSON.stringify({
+                    email
+                }),
+                headers: {
+                    'content-type': "application/json",
+                    // "credentials": "same-origin"
+                }
+            }).then(checkStatus)
+                .then(response => response.json())
+                .then(result => {
+                    console.log('result', result);
+
+                    this.setState({
+                        ...this.state,
+                        result: Object.assign({}, this.state.result, result, {success: true}),
+                        submitting: false,
+                    })
+                }).catch(err => {
+                console.error(err);
+                this.setState({
+                    ...this.state,
+                    submitting: false,
+                })
+            })
+        });
+
+    }
 
     render() {
         return (
@@ -67,20 +131,40 @@ class App extends Component {
                             <p>Manage, generate reports, and search for your invoices easily.</p>
                         </div>
                     </div>
-                    <form className={'my-3'} id={'register'}>
+                    <form
+
+                        id={'registerForm'}
+                        onSubmit={this.handleSubmit}
+                    >
                         <h3>Register</h3>
                         <div className={'my-3 input-group d-flex justify-content-center'}>
                             <input
                                 id={'email'}
                                 type={'email'}
                                 required
-                                placeholder={'register email'}
-                                className={'form-control-lg'}
+                                onChange={e => this.setState({...this.state, email: e.target.value})}
+                                value={this.state.email}
+                                placeholder={'email'}
+                                className={'form-control'}
                             />
                         </div>
                         <button type={'submit'} className={'btn btn-lg btn-warning my-3'}>Submit</button>
                     </form>
+                    {
+                        this.state.result.hasOwnProperty('success') &&
+                        <div className={'row justify-content-center align-items-center'}>
+
+                        <textarea
+                            className={'form-control'}
+                            disabled={true}
+                            rows={8}
+                        >
+                            {JSON.stringify(this.state.result, null, 4)}
+                        </textarea>
+                        </div>
+                    }
                 </section>
+
 
             </div>
         );
