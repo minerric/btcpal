@@ -19,4 +19,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/emailer', emailRouter);
 
+app.get('/healthCheck', (req, res) => res.status(200).send('OK'));
+
 module.exports = app;

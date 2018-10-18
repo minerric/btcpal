@@ -2,7 +2,7 @@
   "name": "btcpal",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://j-chimienti.github.io/btcpal/",
+  "homepage": "https://info.btcpal.online",
   "dependencies": {
     "bootswatch": "^4.1.3",
     "cookie-parser": "~1.4.3",
@@ -19,7 +19,7 @@
   },
   "scripts": {
     "deploy": "gh-pages -d build",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && cp CNAME build",
     "start:be": "node bin/www",
     "start": "react-scripts start",
     "build": "react-scripts build",

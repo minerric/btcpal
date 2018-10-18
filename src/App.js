@@ -61,7 +61,7 @@ class App extends Component {
             result: {},
         }, () => {
 
-            window.fetch(process.env.API_URL + '/emailer', {
+            window.fetch('https://info.btcpal.online/emailer', {
                 method: 'post',
                 body: JSON.stringify({
                     email
@@ -101,12 +101,11 @@ class App extends Component {
                     </p>
                     <button
                         className="btn btn-warning"
-                        onClick={() => smoothScroll('#register')}
+                        onClick={() => smoothScroll('#registerForm')}
                     >
                         Start
                     </button>
                 </header>
-
                 <section className={'About'}>
                     <h3 className={'my-3'}>A Payment Server for Bitcoin</h3>
                     <hr/>
@@ -131,6 +130,10 @@ class App extends Component {
                             <p>Manage, generate reports, and search for your invoices easily.</p>
                         </div>
                     </div>
+
+                </section>
+
+                <section className={'bg-light'}>
                     <form
 
                         id={'registerForm'}
@@ -145,7 +148,7 @@ class App extends Component {
                                 onChange={e => this.setState({...this.state, email: e.target.value})}
                                 value={this.state.email}
                                 placeholder={'email'}
-                                className={'form-control'}
+                                className={'form-control-md'}
                             />
                         </div>
                         <button type={'submit'} className={'btn btn-lg btn-warning my-3'}>Submit</button>
@@ -164,7 +167,6 @@ class App extends Component {
                         </div>
                     }
                 </section>
-
 
             </div>
         );
