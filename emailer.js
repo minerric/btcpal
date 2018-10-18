@@ -21,8 +21,11 @@ function send({to = 'jchimien@gmail.com', subject = 'testing', text = 'this is a
 
     return new Promise((resolve, reject) => {
 
-        console.log('will send email to %f text: %f', to, text);
+        console.log('params', to, subject, text);
+
         const options = Object.assign({}, mailOptions, {to, subject, text});
+
+        console.log('will send', options);
         transporter.sendMail(options, function (err, data) {
 
             if (err) {
