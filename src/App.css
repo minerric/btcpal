@@ -30,3 +30,13 @@
     transform: rotate(360deg);
   }
 }
+
+.About {
+  height: 100vmin;
+
+}
+
+.Contact {
+
+  height: 100vmin;
+}
