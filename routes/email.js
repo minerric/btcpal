@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const sendEmail = require('../emailer.js').send;
+const {send} = require('../emailer.js');
 
 /* GET users listing. */
 router.post('/', function (req, res, next) {
@@ -14,14 +14,19 @@ router.post('/', function (req, res, next) {
 
 
     console.log('options', options);
-    res.json(options);
 
-    // sendEmail(options).then(result => {
-    //
-    //     res.status(200).json(options);
-    // }).catch(err => {
-    //     res.status(500).json(options);
-    // })
+    send(options).then(result => {
+
+        res.status(200).json({
+            msg: options,
+            result,
+        });
+    }).catch(err => {
+        res.status(500).json({
+            msg: options,
+            err,
+        });
+    })
 });
 
 module.exports = router;

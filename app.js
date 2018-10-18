@@ -1,13 +1,12 @@
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+const cors = require('cors');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const emailRouter = require('./routes/email');
-const cors = require('cors');
-
 var app = express();
 
 app.use(logger('dev'));
