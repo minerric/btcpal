@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+
+.App-title {
+
+    text-transform: uppercase;
+    font-weight: bold;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -31,8 +37,12 @@
   }
 }
 
+section {
+  padding-top: 3rem;
+  min-height: 80vh;
+}
 .About {
-  height: 100vmin;
+  min-height: 120vmin;
 
 }
 

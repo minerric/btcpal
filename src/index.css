@@ -1,1 +1,37 @@
 @import '~bootswatch/dist/flatly/bootstrap.min.css';
+
+@keyframes bouncing-loader {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-1rem);
+        opacity: 0.1;
+    }
+}
+
+.bouncing-loader {
+
+}
+
+.bouncing-loader > div {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    animation: bouncing-loader 0.6s infinite alternate;
+    margin: 3rem 0.2rem;
+    background: #8385aa;
+
+}
+
+.bouncing-loader > div:nth-child(2) {
+
+    animation-delay: .2s
+
+}
+
+.bouncing-loader > div:last-child {
+    animation-delay: 0.4s;
+}
