@@ -99,7 +99,11 @@ function onListening() {
 
 
 // Connection URL
+
+
 const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@btcpal.online:27017`;
+
+console.log('mongo url');
 
 // Database Name
 const dbName = 'regisration';
