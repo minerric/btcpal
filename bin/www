@@ -110,11 +110,11 @@ async function main() {
 
     const dbName = 'regisration';
 
-    const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@mongodb/admin`;
+    const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@0.0.0.0/admin`;
 
     const client = await MongoClient.connect(url, {poolSize: 20, useNewUrlParser: true}).catch(err => {
 
-        console.error('error connecting to server');
+        console.error('error connecting to server @', url);
         process.exit(1);
     });
 

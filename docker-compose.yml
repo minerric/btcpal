@@ -1,21 +1,7 @@
 version: '3.1'
 
 services:
-  web:
-    build: .
-    restart: unless-stopped
-    environment:
-      NODE_ENV: development
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
-      GMAIL_PASS: ${GMAIL_PASS}
-      GMAIL_USER: ${GMAIL_USER}
-    links:
-    - mongodb
-    ports:
-    - 5555:5555
-    depends_on:
-    - mongodb
+
   mongodb:
     image: mongo:latest
     container_name: mongodb
@@ -29,6 +15,21 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
       MONGO_DATA_DIR: /data/db
       MONGO_LOG_DIR: /dev/null
+    web:
+      build: .
+      restart: unless-stopped
+      environment:
+        NODE_ENV: development
+        MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+        MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+        GMAIL_PASS: ${GMAIL_PASS}
+        GMAIL_USER: ${GMAIL_USER}
+      links:
+      - mongodb
+      ports:
+      - 5555:5555
+      depends_on:
+      - mongodb
 #
 #  mongo-express:
 #    image: mongo-express
