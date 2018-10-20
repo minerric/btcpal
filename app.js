@@ -6,7 +6,7 @@ const logger = require('morgan');
 const compression = require('compression');
 const helmet = require('helmet');
 
-const usersRouter = require('./routes/users');
+const usersRouter = require('./lib/users/users.router');
 const app = express();
 
 // Gzip all responses

@@ -63,24 +63,24 @@ class App extends Component {
             result: {},
         }, () => {
 
-            // window.fetch('https://btcpal.online:5555/users', {
-            //     method: 'post',
-            //     body: JSON.stringify({
-            //         email
-            //     }),
-            //     headers: {
-            //         'content-type': "application/json",
-            //         // "credentials": "same-origin"
-            //     }
-            // }).then(checkStatus)
-            //     .then(response => response.json())
-            return new Promise((resolve) => {
-
-                setTimeout(() => resolve({
-                    email,
-                    message: '',
-                }), 1000);
-            })
+            return window.fetch('https://btcpal.online:5555/users', {
+                method: 'post',
+                body: JSON.stringify({
+                    email
+                }),
+                headers: {
+                    'content-type': "application/json",
+                    // "credentials": "same-origin"
+                }
+            }).then(checkStatus)
+                .then(response => response.json())
+                // return new Promise((resolve) => {
+                //
+                //     setTimeout(() => resolve({
+                //         email,
+                //         message: '',
+                //     }), 1000);
+                // })
                 .then(result => {
                     console.log('result', result);
 
@@ -118,7 +118,6 @@ class App extends Component {
                         CBD STORE!
                     </h1>
                     <img src={marijuana} className={'App-logo'} alt={'logo'}/>
-
 
 
                     <p>
