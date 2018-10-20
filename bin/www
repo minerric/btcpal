@@ -103,17 +103,17 @@ function onListening() {
 
     const dbName = 'regisration';
     const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@btcpal.online:27017`;
-    debug('mongo url' + url);
+    console.log('mongo url' + url);
 
     const client = await MongoClient.connect(url, {poolSize: 20, useNewUrlParser: true}).catch(err => {
 
-        debug('error connecting to server');
+        console.log('error connecting to server');
 
         process.exit(1);
     });
 
 // Use connect method to connect to the Server
-    debug("Connected successfully to server");
+    console.log("Connected successfully to server");
 
     global.db = client.db(dbName);
 
