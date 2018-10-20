@@ -8,14 +8,15 @@ services:
     environment:
     - NODE_ENV=development
     links:
-    - mongo
+    - mongodb
     ports:
     - 5555:5555
     depends_on:
-    - mongo
+    - mongodb
     - mongo-express
-  mongo:
-    image: mongo
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
     ports:
     - 27017:27017
     volumes:
@@ -26,14 +27,16 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: example
       MONGO_DATA_DIR: /data/db
       MONGO_LOG_DIR: /dev/null
-
-  mongo-express:
-    image: mongo-express
-    restart: unless-stopped
-    depends_on:
-      - mongo
-    ports:
-    - 8081:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: user
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+#
+#  mongo-express:
+#    image: mongo-express
+#    restart: unless-stopped
+#    depends_on:
+#      - mongodb
+#    links:
+#      - mongodb
+#    ports:
+#    - 8081:8081
+#    environment:
+#      ME_CONFIG_MONGODB_ADMINUSERNAME: user
+#      ME_CONFIG_MONGODB_ADMINPASSWORD: example
