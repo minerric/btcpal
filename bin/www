@@ -5,8 +5,6 @@
  */
 
 require('dotenv').load();
-
-
 var app = require('../app');
 const fs = require('fs');
 var debug = require('debug')('btcpalbe:server');
@@ -101,7 +99,7 @@ function onListening() {
 
 
 // Connection URL
-const url = 'mongodb://btcpal.online:27017';
+const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@btcpal.online:27017`;
 
 // Database Name
 const dbName = 'regisration';

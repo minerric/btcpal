@@ -22,8 +22,8 @@ services:
     - ./data/db:/data/db
     restart: unless-stopped
     environment:
-      MONGO_INITDB_ROOT_USERNAME: user
-      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
       MONGO_DATA_DIR: /data/db
       MONGO_LOG_DIR: /dev/null
 #
