@@ -14,7 +14,6 @@ var debug = require('debug')('btcpalbe:server');
 //var http = require('http');
 var https = require('https')
 const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
 
 /**
  * Get port from environment and store in Express.
@@ -106,7 +105,7 @@ function onListening() {
 
 const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@btcpal.online:27017`;
 
-console.log('mongo url', url);
+debug('mongo url', url);
 
 // Database Name
 const dbName = 'regisration';
@@ -122,16 +121,16 @@ const dbName = 'regisration';
         console.error(err);
 
         process.exit(1);
-    })
+    });
 
 // Use connect method to connect to the Server
-    console.log("Connected successfully to server");
+    debug("Connected successfully to server");
 
     const db = client.db(dbName);
 
     global.db = db;
 
-    console.log('port %', port);
+    debug('port %', port);
     server.listen(port, '0.0.0.0');
     server.on('error', onError);
     server.on('listening', onListening);
