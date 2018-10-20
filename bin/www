@@ -5,6 +5,9 @@
  */
 
 require('dotenv').load();
+
+console.log('env', process.env);
+
 var app = require('../app');
 const fs = require('fs');
 var debug = require('debug')('btcpalbe:server');
@@ -103,7 +106,7 @@ function onListening() {
 
 const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@btcpal.online:27017`;
 
-console.log('mongo url');
+console.log('mongo url', url);
 
 // Database Name
 const dbName = 'regisration';
@@ -112,7 +115,14 @@ const dbName = 'regisration';
 // Create a new MongoClient
 (async function main() {
 
-    const client = await MongoClient.connect(url, {poolSize: 20, useNewUrlParser: true});
+    const client = await MongoClient.connect(url, {poolSize: 20, useNewUrlParser: true}).catch(err => {
+
+        console.error('error connecting to db');
+
+        console.error(err);
+
+        process.exit(1);
+    })
 
 // Use connect method to connect to the Server
     console.log("Connected successfully to server");
