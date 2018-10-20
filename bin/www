@@ -4,13 +4,11 @@
  * Module dependencies.
  */
 
-require('dotenv').load();
-
 var app = require('../app');
 const fs = require('fs');
 var debug = require('debug')('btcpalbe:server');
 //var http = require('http');
-var https = require('https')
+var https = require('https');
 const MongoClient = require('mongodb').MongoClient;
 
 /**
@@ -94,7 +92,7 @@ function onListening() {
         : 'port ' + addr.port;
     debug('Listening on ' + bind);
     app.emit('ready');
-    console.log('listening on port', bind);
+    debug('listening on port' + bind);
 }
 
 
@@ -103,17 +101,17 @@ function onListening() {
 
     const dbName = 'regisration';
     const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@btcpal.online:27017`;
-    console.log('mongo url' + url);
+    debug('mongo url ' + url);
 
     const client = await MongoClient.connect(url, {poolSize: 20, useNewUrlParser: true}).catch(err => {
 
-        console.log('error connecting to server');
+        debug('error connecting to server');
 
         process.exit(1);
     });
 
 // Use connect method to connect to the Server
-    console.log("Connected successfully to server");
+    debug("Connected successfully to server");
 
     global.db = client.db(dbName);
 

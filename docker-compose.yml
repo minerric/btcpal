@@ -6,7 +6,12 @@ services:
     build: .
     restart: unless-stopped
     environment:
-    - NODE_ENV=development
+      NODE_ENV: development
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      GMAIL_PASS: ${GMAIL_PASS}
+      GMAIL_USER: ${GMAIL_USER}
+
     links:
     - mongodb
     ports:
