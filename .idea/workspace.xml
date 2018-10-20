@@ -67,7 +67,7 @@
           <entry key="gitignore" value="5" />
           <entry key="js" value="8621" />
           <entry key="json" value="171" />
-          <entry key="www" value="519" />
+          <entry key="www" value="576" />
           <entry key="yml" value="532" />
         </counts>
       </usages-collector>
@@ -76,7 +76,7 @@
           <entry key="CSS" value="547" />
           <entry key="Dockerfile" value="118" />
           <entry key="JSON" value="171" />
-          <entry key="JavaScript" value="9140" />
+          <entry key="JavaScript" value="9197" />
           <entry key="PLAIN_TEXT" value="163" />
           <entry key="YAML" value="532" />
         </counts>
@@ -98,8 +98,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/www">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
+            <state relative-caret-position="226">
+              <caret line="109" column="41" selection-start-line="109" selection-start-column="41" selection-end-line="109" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -140,6 +140,7 @@
       <find>registerForm</find>
       <find>form</find>
       <find>Ap</find>
+      <find>debug</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -334,12 +335,12 @@
       <workItem from="1539895758038" duration="1020000" />
       <workItem from="1539905559548" duration="2888000" />
       <workItem from="1539993999087" duration="5769000" />
-      <workItem from="1540042129979" duration="4699000" />
+      <workItem from="1540042129979" duration="5147000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31742000" />
+    <option name="totallyTimeSpent" value="32190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="25" y="23" width="1231" height="777" extended-state="0" />
@@ -359,7 +360,7 @@
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.14499253" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.60687596" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -499,8 +500,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
+        <state relative-caret-position="226">
+          <caret line="109" column="41" selection-start-line="109" selection-start-column="41" selection-end-line="109" selection-end-column="41" />
         </state>
       </provider>
     </entry>
