@@ -3,13 +3,15 @@
 /**
  * Module dependencies.
  */
+require('dotenv').load();
+
 
 var app = require('../app');
 const fs = require('fs');
 var debug = require('debug')('btcpalbe:server');
-//var http = require('http');
 var https = require('https');
 const MongoClient = require('mongodb').MongoClient;
+
 
 /**
  * Get port from environment and store in Express.
@@ -21,12 +23,19 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
+let server;
+if (process.env.HTTP_SERVER_ENABLED) {
+    var http = require('http');
 
-const options = {
-    key: fs.readFileSync('./key.pem'),
-    cert: fs.readFileSync('./cert.pem'),
+    server = http.createServer(app);
+} else {
+    const options = {
+        key: fs.readFileSync('./key.pem'),
+        cert: fs.readFileSync('./cert.pem'),
+    }
+    server = https.createServer(options, app);
+
 }
-var server = https.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -90,9 +99,9 @@ function onListening() {
     var bind = typeof addr === 'string'
         ? 'pipe ' + addr
         : 'port ' + addr.port;
-    debug('Listening on ' + bind);
+    console.log('Listening on ' + bind);
     app.emit('ready');
-    debug('listening on port' + bind);
+    console.log('listening on port' + bind);
 }
 
 
@@ -100,22 +109,21 @@ function onListening() {
 async function main() {
 
     const dbName = 'regisration';
-    const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@localhost:27017`;
-    debug('mongo url ' + url);
+
+    const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@mongodb/admin`;
 
     const client = await MongoClient.connect(url, {poolSize: 20, useNewUrlParser: true}).catch(err => {
 
-        debug('error connecting to server');
-
+        console.error('error connecting to server');
         process.exit(1);
     });
 
 // Use connect method to connect to the Server
-    debug("Connected successfully to server");
+    console.log("Connected successfully to server");
 
     global.db = client.db(dbName);
 
-    debug('port %' + port);
+    console.log('port %' + port);
     server.listen(port, '0.0.0.0');
     server.on('error', onError);
     server.on('listening', onListening);

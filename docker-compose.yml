@@ -5,6 +5,7 @@ services:
     build: .
     restart: unless-stopped
     environment:
+      NODE_ENV: development
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
       GMAIL_PASS: ${GMAIL_PASS}
@@ -22,7 +23,7 @@ services:
     - 27017:27017
     volumes:
     - ./data/db:/data/db
-    restart: unless-stopped
+    restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
