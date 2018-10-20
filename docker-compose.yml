@@ -13,7 +13,6 @@ services:
     - 5555:5555
     depends_on:
     - mongodb
-    - mongo-express
   mongodb:
     image: mongo:latest
     container_name: mongodb
