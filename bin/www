@@ -97,10 +97,10 @@ function onListening() {
 
 
 // Create a new MongoClient
-(async function main() {
+async function main() {
 
     const dbName = 'regisration';
-    const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@btcpal.online:27017`;
+    const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@localhost:27017`;
     debug('mongo url ' + url);
 
     const client = await MongoClient.connect(url, {poolSize: 20, useNewUrlParser: true}).catch(err => {
@@ -121,5 +121,7 @@ function onListening() {
     server.on('listening', onListening);
 
 
-})();
+}
+
+main();
 
