@@ -58,6 +58,10 @@ function ContactForm({handleSubmit, handleChange}) {
                     </textarea>
                 </fieldset>
                 <fieldset>
+                    <div className="g-recaptcha" data-sitekey={process.env.REACT_APP_RECAPTCHA_KEY}></div>
+                </fieldset>
+
+                <fieldset>
                     <button
                         className={'btn btn-primary'}
                         name="submit"
@@ -65,7 +69,6 @@ function ContactForm({handleSubmit, handleChange}) {
                     </button>
                 </fieldset>
 
-                <div className="g-recaptcha" data-sitekey="6LeRE3YUAAAAAJBcgHhKwbwV2Ctewx8ialYj6xYu"></div>
 
             </form>
 
