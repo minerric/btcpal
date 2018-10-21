@@ -20,6 +20,7 @@ services:
     build: .
     restart: unless-stopped
     environment:
+      RECAPTCHA_SECRET: ${RECAPTCHA_SECRET}
       NODE_ENV: development
       MONGO_CONTAINER_NAME: mongodb
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}

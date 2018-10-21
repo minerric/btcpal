@@ -49,6 +49,7 @@ class App extends Component {
         website: '',
         email: '',
         message: '',
+        subject: '',
         formSuccess: false,
         formPending: false,
         formError: false,
@@ -75,7 +76,7 @@ class App extends Component {
 
         e.preventDefault();
 
-        const {email, message, phone, name, website} = this.state;
+        const {email, message, phone, name, website, subject} = this.state;
 
         const {success, response} = validateRecaptcha();
         if (!(success && response)) {
@@ -96,6 +97,7 @@ class App extends Component {
                 body: JSON.stringify({
                     email,
                     message,
+                    subject,
                     phone,
                     name,
                     website,

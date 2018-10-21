@@ -42,6 +42,14 @@ function ContactForm({handleSubmit, handleChange}) {
                     />
                 </fieldset>
                 <fieldset>
+                    <input
+                        name={'subject'}
+                        className={'form-control'}
+                        placeholder={'Subject'}
+                        onChange={handleChange}
+                    />
+                </fieldset>
+                <fieldset>
                     <textarea
                         name={'message'}
                         className={'form-control'}
@@ -53,7 +61,8 @@ function ContactForm({handleSubmit, handleChange}) {
                     <button
                         className={'btn btn-primary'}
                         name="submit"
-                        type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                        type="submit" id="contact-submit" data-submit="...Sending">Submit
+                    </button>
                 </fieldset>
 
                 <div className="g-recaptcha" data-sitekey="6LeRE3YUAAAAAJBcgHhKwbwV2Ctewx8ialYj6xYu"></div>
