@@ -10,7 +10,7 @@ var app = require('../app');
 const fs = require('fs');
 var debug = require('debug')('btcpalbe:server');
 var https = require('https');
-const MongoClient = require('mongodb').MongoClient;
+const mongoConnect = require('./mongo.connect').connect
 
 
 /**
@@ -110,16 +110,9 @@ async function main() {
 
     const dbName = 'regisration';
 
-    const url = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@${process.env.MONGO_CONTAINER_NAME}/admin`;
 
-    const client = await MongoClient.connect(url, {poolSize: 20, useNewUrlParser: true}).catch(err => {
-
-        console.error('error connecting to server @', url);
-        process.exit(1);
-    });
-
-// Use connect method to connect to the Server
-    console.log("Connected successfully to server", url);
+    const client = await mongoConnect();
+    console.log("Connected successfully to server");
 
     global.db = client.db(dbName);
 

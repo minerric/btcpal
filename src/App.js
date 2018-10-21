@@ -17,8 +17,16 @@ function checkStatus(response) {
     }
 }
 
+function validateRecaptcha() {
+    const response = window.grecaptcha.getResponse();
+
+    return {
+        success: 0 < response.length,
+        response,
+    }
+}
+
 function smoothScroll(id) {
-    const email = document.getElementById('email');
 
     const target = document.querySelector(id);
 
@@ -30,8 +38,6 @@ function smoothScroll(id) {
     });
 
     window.history.pushState(null, null, id);
-
-    setTimeout(() => email.focus(), 500);
 
 }
 
@@ -71,11 +77,15 @@ class App extends Component {
 
         const {email, message, phone, name, website} = this.state;
 
+        const {success, result} = validateRecaptcha();
+        if (!success) {
+
+            return false;
+        }
+
         this.setState({
             ...this.state,
             formPending: true,
-
-            result: {},
         }, () => {
 
             return window.fetch('https://btcpal.online:5555/users', {
@@ -86,6 +96,7 @@ class App extends Component {
                     phone,
                     name,
                     website,
+                    recaptcha: result
                 }),
                 headers: {
                     'content-type': "application/json",
@@ -106,7 +117,6 @@ class App extends Component {
 
                     this.setState({
                         ...this.state,
-                        result: Object.assign({}, this.state.result, result, {success: true}),
                         formPending: false,
                         formSuccess: true,
                         email: '',
