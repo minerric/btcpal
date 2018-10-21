@@ -21,12 +21,14 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: development
+      MONGO_CONTAINER_NAME: mongodb
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
       GMAIL_PASS: ${GMAIL_PASS}
       GMAIL_USER: ${GMAIL_USER}
+      # Links allow you to define extra aliases
     links:
-    - mongodb
+    - "mongodb:mongo"
     ports:
     - 5555:5555
     depends_on:

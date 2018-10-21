@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import btc from './btc.svg';
+import moneyLogo from './money-logo.png';
+import qrCode from './qr-logo.png';
+import lockLogo from './lock-logo.png';
 import './App.css';
+import ContactForm from "./ContactForm";
 
-import marijuana from './marijuana.svg';
 
 function checkStatus(response) {
     if (response.status >= 200 && response.status < 300) {
@@ -35,6 +38,9 @@ function smoothScroll(id) {
 class App extends Component {
 
     state = {
+        name: '',
+        phone: '',
+        website: '',
         email: '',
         message: '',
         formSuccess: false,
@@ -47,14 +53,23 @@ class App extends Component {
         super();
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
 
+    }
+
+    handleChange(e) {
+
+        this.setState({
+            ...this.state,
+            [e.target.name]: e.target.value,
+        })
     }
 
     handleSubmit(e) {
 
         e.preventDefault();
 
-        const {email} = this.state;
+        const {email, message, phone, name, website} = this.state;
 
         this.setState({
             ...this.state,
@@ -66,7 +81,11 @@ class App extends Component {
             return window.fetch('https://btcpal.online:5555/users', {
                 method: 'post',
                 body: JSON.stringify({
-                    email
+                    email,
+                    message,
+                    phone,
+                    name,
+                    website,
                 }),
                 headers: {
                     'content-type': "application/json",
@@ -114,155 +133,76 @@ class App extends Component {
                 <header className="App-header">
 
 
-                    <h1 className={'App-title'}>
-                        CBD STORE!
-                    </h1>
-                    <img src={marijuana} className={'App-logo'} alt={'logo'}/>
-
-
-                    <p>
+                    <h1 className={'App-title'}>BTC PAL</h1>
+                    <img src={btc} className="App-logo" alt="logo"/>
+                    <p className={'my-3'}>
                         Accept Bitcoin and
-                        <span>⚡</span>
+                        <span role={'img'} aria-label={'lightning'}>⚡</span>
                         Lightning Payments
                     </p>
-                    {/*<h1 className={'App-title'}>BTC PAL</h1>*/}
-                    {/*<img src={btc} className="App-logo" alt="logo"/>*/}
-                    {/*<p className={'my-3'}>*/}
-                    {/*Accept Bitcoin and*/}
-                    {/*<span>⚡</span>*/}
-                    {/*Lightning Payments*/}
-                    {/*</p>*/}
-                    {/*<button*/}
-                    {/*className="btn btn-lg btn-warning"*/}
-                    {/*onClick={() => smoothScroll('#registerForm')}*/}
-                    {/*>*/}
-                    {/*Start*/}
-                    {/*</button>*/}
+                    <button
+                        className="btn btn-lg btn-warning"
+                        onClick={() => smoothScroll('#registerForm')}
+                    >
+                        Start
+                    </button>
                 </header>
 
-                <section>
-                    <a href={'https://btcpal.online/apps/4ZRSH4zZrX8hAYzhXY5WnhYGwmkf/pos'}
-                       target={'_blank'}>
-                        VIEW AUTO GENERATED STORE
-                    </a>
-                    <div className={'row d-sm-flex align-items-center justify-content-center'}>
 
-                        <div className={'card m-2'}>
-                            <div className={'card-body'}>
-                                <h4 className={'card-title'}>
-                                    Hemp Bud
-                                </h4>
-                                <form method="POST"
-                                      action="https://btcpal.online/apps/4ZRSH4zZrX8hAYzhXY5WnhYGwmkf/pos">
-                                    <input type="hidden" name="email" value="customer@example.com"/>
-                                    <input type="hidden" name="orderId" value="CustomOrderId"/>
-                                    <input type="hidden" name="notificationUrl" value="https://example.com/callbacks"/>
-                                    <input type="hidden" name="redirectUrl" value="https://example.com/thanksyou"/>
-                                    <button className={'btn btn-primary'} type="submit" name="choiceKey"
-                                            value="hemp bud">Buy now
-                                    </button>
-                                </form>
-                            </div>
+                <section className={'About container'}>
+                    <h3 className={'my-3'}>A Payment Server for Bitcoin</h3>
+                    <div className={'row my-3'}>
+
+                        <div className={'col-sm-4'}>
+                            <img src={lockLogo} alt={'secure'}/>
+                            <h4>Secure</h4>
+                            <p>The payment server does not need to know your private keys, so your money can't be
+                                stolen.</p>
                         </div>
+
+                        <div className={'col-sm-4'}>
+                            <img src={qrCode} alt={'easy'}/>
+                            <h4>Easy</h4>
+                            <p>A user-friendly Bitcoin checkout page for your customers.</p>
+                        </div>
+
+                        <div className={'col-sm-4'}>
+                            <img src={moneyLogo} alt={'vis'}/>
+                            <h4>Visibility</h4>
+                            <p>Manage, generate reports, and search for your invoices easily.</p>
+                        </div>
+                    </div>
+
+                    <div className={'row'}>
                         <div className={'card m-2'}>
                             <div className={'card-body'}>
-                                <h4 className={'card-title'}>
-                                    CBD COFFEE
-                                </h4>
-                                <form method="POST"
-                                      action="https://btcpal.online/apps/4ZRSH4zZrX8hAYzhXY5WnhYGwmkf/pos">
-                                    <input type="hidden" name="email" value="customer@example.com"/>
-                                    <input type="hidden" name="orderId" value="CustomOrderId"/>
-                                    <input type="hidden" name="notificationUrl" value="https://example.com/callbacks"/>
-                                    <input type="hidden" name="redirectUrl" value="https://example.com/thanksyou"/>
-                                    <button className={'btn btn-primary'} type="submit" name="choiceKey"
-                                            value="cbd coffee">Buy now
-                                    </button>
-                                </form>
+                                <div className={'card-title'}>
+                                    $5 / month
+                                </div>
+                                <p className={'card-text'}>
+                                    1 store
+                                    10,000 on-chain txs / month
+                                </p>
                             </div>
                         </div>
 
-                        <div className={'card m-2'}>
+                        <div className={'cardmx-2 m-2 '}>
                             <div className={'card-body'}>
-                                <h4 className={'card-title'}>
-                                    CBD CART
-                                </h4>
-                                <form method="POST"
-                                      action="https://btcpal.online/apps/4ZRSH4zZrX8hAYzhXY5WnhYGwmkf/pos">
-                                    <input type="hidden" name="email" value="customer@example.com"/>
-                                    <input type="hidden" name="orderId" value="CustomOrderId"/>
-                                    <input type="hidden" name="notificationUrl" value="https://example.com/callbacks"/>
-                                    <input type="hidden" name="redirectUrl" value="https://example.com/thanksyou"/>
-                                    <button className={'btn btn-primary'} type="submit" name="choiceKey"
-                                            value="cbd cart">Buy now
-                                    </button>
-                                </form>
+                                <div className={'card-title'}>
+                                    $10 / month
+                                </div>
+                                <p className={'card-text'}>
+                                    unlimited stores<br/>
+                                    unlimited on-chain txs<br/>
+                                    lightning enabled
+                                    <span>⚡</span>
+
+                                </p>
                             </div>
                         </div>
                     </div>
+
                 </section>
-
-                {/*<section className={'About container'}>*/}
-                {/*<h3 className={'my-3'}>A Payment Server for Bitcoin</h3>*/}
-                {/*<div className={'row my-3'}>*/}
-
-                {/*<div className={'col-sm-4'}>*/}
-                {/*<img src={lockLogo} alt={'secure'}/>*/}
-                {/*<h4>Secure</h4>*/}
-                {/*<p>The payment server does not need to know your private keys, so your money can't be*/}
-                {/*stolen.</p>*/}
-                {/*</div>*/}
-
-                {/*<div className={'col-sm-4'}>*/}
-                {/*<img src={qrCode} alt={'easy'}/>*/}
-                {/*<h4>Easy</h4>*/}
-                {/*<p>A user-friendly Bitcoin checkout page for your customers.</p>*/}
-                {/*</div>*/}
-
-                {/*<div className={'col-sm-4'}>*/}
-                {/*<img src={moneyLogo} alt={'vis'}/>*/}
-                {/*<h4>Visibility</h4>*/}
-                {/*<p>Manage, generate reports, and search for your invoices easily.</p>*/}
-                {/*</div>*/}
-                {/*</div>*/}
-
-                {/*<div className={'row'}>*/}
-                {/*<div className={'card m-2'}>*/}
-                {/*<div className={'card-body'}>*/}
-                {/*<div className={'card-title'}>*/}
-                {/*$5 / month*/}
-                {/*</div>*/}
-                {/*<p className={'card-text'}>*/}
-                {/*1 store*/}
-                {/*1,000 on-chain txs / month*/}
-                {/*</p>*/}
-                {/*</div>*/}
-                {/*</div>*/}
-
-                {/*<div className={'cardmx-2 m-2 '}>*/}
-                {/*<div className={'card-body'}>*/}
-                {/*<div className={'card-title'}>*/}
-                {/*$50 / month*/}
-                {/*</div>*/}
-                {/*<p className={'card-text'}>*/}
-                {/*unlimited stores*/}
-                {/*unlimited txs*/}
-                {/*lightning*/}
-                {/*<span>⚡</span>*/}
-
-                {/*</p>*/}
-                {/*</div>*/}
-                {/*</div>*/}
-                {/*</div>*/}
-
-                {/*<div className={'row'}>*/}
-                {/*<a*/}
-                {/*target={'_blank'}*/}
-                {/*href={'https://btcpal.online/apps/GSWCHJKG7XH4oJeMLaFAZ8LMyrC7XtYnT4SYRqXgivxr/pos'}*/}
-                {/*>View Test Store*/}
-                {/*</a>*/}
-                {/*</div>*/}
-                {/*</section>*/}
 
                 <section className={'bg-light'}>
                     <div className={'container'}>
@@ -291,28 +231,11 @@ class App extends Component {
                                 <div></div>
                             </div>
                         }
-                        <form
+                        <ContactForm
+                            handleSubmit={this.handleSubmit}
+                            handleChange={this.handleChange}
+                        />
 
-                            id={'registerForm'}
-                            onSubmit={this.handleSubmit}
-                        >
-                            <h3>Contact</h3>
-                            <p>
-                                Enter email address below and we will contact you shortly
-                            </p>
-                            <div className={'my-3 input-group d-flex justify-content-center'}>
-                                <input
-                                    id={'email'}
-                                    type={'email'}
-                                    required
-                                    onChange={e => this.setState({...this.state, email: e.target.value})}
-                                    value={this.state.email}
-                                    placeholder={'email'}
-                                    className={'form-control-md'}
-                                />
-                            </div>
-                            <button type={'submit'} className={'btn btn-lg btn-warning my-3'}>Submit</button>
-                        </form>
                     </div>
 
                 </section>
