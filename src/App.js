@@ -77,10 +77,13 @@ class App extends Component {
 
         const {email, message, phone, name, website} = this.state;
 
-        const {success, result} = validateRecaptcha();
-        if (!success) {
+        const {success, response} = validateRecaptcha();
+        if (!(success && response)) {
 
-            return false;
+            return this.setState({
+                formPending: false,
+                formError: 'invalid captcha'
+            });
         }
 
         this.setState({
@@ -96,7 +99,7 @@ class App extends Component {
                     phone,
                     name,
                     website,
-                    recaptcha: result
+                    recaptcha: response
                 }),
                 headers: {
                     'content-type': "application/json",
