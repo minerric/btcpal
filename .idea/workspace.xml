@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4b6b385-4561-45ca-81a1-9dcdec7a0436" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/reCaptcha/reCaptcha.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/reCaptcha/reCaptcha.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ContactForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContactForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,7 +35,7 @@
           <entry key="gitignore" value="1" />
           <entry key="html" value="6" />
           <entry key="js" value="67" />
-          <entry key="json" value="10" />
+          <entry key="json" value="11" />
           <entry key="jsx" value="4" />
           <entry key="md" value="2" />
           <entry key="svg" value="3" />
@@ -49,7 +48,7 @@
           <entry key="CSS" value="8" />
           <entry key="Dockerfile" value="3" />
           <entry key="HTML" value="6" />
-          <entry key="JSON" value="10" />
+          <entry key="JSON" value="11" />
           <entry key="JSX Harmony" value="4" />
           <entry key="JavaScript" value="81" />
           <entry key="Markdown" value="2" />
@@ -71,8 +70,8 @@
           <entry key="env" value="199" />
           <entry key="gitignore" value="5" />
           <entry key="html" value="23" />
-          <entry key="js" value="10768" />
-          <entry key="json" value="171" />
+          <entry key="js" value="10771" />
+          <entry key="json" value="219" />
           <entry key="jsx" value="334" />
           <entry key="www" value="1166" />
           <entry key="yml" value="628" />
@@ -83,9 +82,9 @@
           <entry key="CSS" value="581" />
           <entry key="Dockerfile" value="118" />
           <entry key="HTML" value="23" />
-          <entry key="JSON" value="171" />
+          <entry key="JSON" value="219" />
           <entry key="JSX Harmony" value="334" />
-          <entry key="JavaScript" value="11934" />
+          <entry key="JavaScript" value="11937" />
           <entry key="PLAIN_TEXT" value="222" />
           <entry key="YAML" value="628" />
         </counts>
@@ -98,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/users/users.router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
+            <state relative-caret-position="114">
               <caret line="27" column="79" selection-start-line="27" selection-start-column="79" selection-end-line="27" selection-end-column="79" />
             </state>
           </provider>
@@ -107,8 +106,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/reCaptcha/reCaptcha.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+            <state relative-caret-position="259">
+              <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -169,6 +168,7 @@
         <option value="$PROJECT_DIR$/src/ContactForm.jsx" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/lib/reCaptcha/reCaptcha.controller.js" />
+        <option value="$PROJECT_DIR$/public/manifest.json" />
       </list>
     </option>
   </component>
@@ -205,22 +205,6 @@
             <path>
               <item name="btcpal" type="b2602c69:ProjectViewProjectNode" />
               <item name="btcpal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="btcpal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="btcpal" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="btcpal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="btcpal" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="reCaptcha" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="btcpal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="btcpal" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -335,12 +319,12 @@
       <workItem from="1539895758038" duration="1020000" />
       <workItem from="1539905559548" duration="2888000" />
       <workItem from="1539993999087" duration="5769000" />
-      <workItem from="1540042129979" duration="21160000" />
+      <workItem from="1540042129979" duration="21399000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48203000" />
+    <option name="totallyTimeSpent" value="48442000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="25" y="23" width="1231" height="777" extended-state="0" />
@@ -594,17 +578,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/users/users.router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
+        <state relative-caret-position="114">
           <caret line="27" column="79" selection-start-line="27" selection-start-column="79" selection-end-line="27" selection-end-column="79" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/reCaptcha/reCaptcha.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+        <state relative-caret-position="259">
+          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
         </state>
       </provider>
     </entry>
