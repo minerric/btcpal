@@ -142,7 +142,7 @@ class App extends Component {
                     </p>
                     <button
                         className="btn btn-lg btn-warning"
-                        onClick={() => smoothScroll('#registerForm')}
+                        onClick={() => smoothScroll('#contact')}
                     >
                         Start
                     </button>
