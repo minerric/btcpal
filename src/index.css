@@ -1,5 +1,9 @@
 @import '~bootswatch/dist/flatly/bootstrap.min.css';
 
+:root {
+    --darky: #282c34;
+}
+
 @keyframes bouncing-loader {
     from {
         transform: translateY(0);
