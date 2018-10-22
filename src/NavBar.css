@@ -1,0 +1,11 @@
+.Navbar .nav-link {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+    transition: color 0.07s linear;
+}
+
+.Navbar .nav-link:hover {
+
+    color: var(--warning);
+}

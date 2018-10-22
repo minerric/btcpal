@@ -5,6 +5,12 @@ import qrCode from './qr-logo.png';
 import lockLogo from './lock-logo.png';
 import './App.css';
 import ContactForm from "./ContactForm";
+import Pricing from "./Pricing";
+import Footer from "./Footer";
+import ContactBtn from "./ContactBtn";
+import Features from "./Features";
+import About from "./About";
+import NavBar from "./NavBar";
 
 
 function checkStatus(response) {
@@ -26,20 +32,6 @@ function validateRecaptcha() {
     }
 }
 
-function smoothScroll(id) {
-
-    const target = document.querySelector(id);
-
-    target.scrollIntoView({
-        alignToTop: true,
-        block: 'start',
-        inline: 'nearest',
-        behavior: 'smooth',
-    });
-
-    window.history.pushState(null, null, id);
-
-}
 
 class App extends Component {
 
@@ -146,81 +138,34 @@ class App extends Component {
         return (
             <div className="App">
                 <header className="App-header">
+                <NavBar/>
 
+                    <div className={'row d-flex justify-content-around my-3'}>
+                        <img src={btc} className="App-logo" alt="logo"/>
+                        <div className={'ml-3'}>
+                            <h1 className={'App-title'}>BTC PAL</h1>
+                            <h6 className={'my-3'}>
+                                Accept Bitcoin and
+                                <span role={'img'} aria-label={'lightning'}>⚡</span>
+                                Lightning Payments for your business
+                            </h6>
+                            <ContactBtn/>
+                        </div>
+                    </div>
 
-                    <h1 className={'App-title'}>BTC PAL</h1>
-                    <img src={btc} className="App-logo" alt="logo"/>
-                    <p className={'my-3'}>
-                        Accept Bitcoin and
-                        <span role={'img'} aria-label={'lightning'}>⚡</span>
-                        Lightning Payments
-                    </p>
-                    <button
-                        className="btn btn-lg btn-warning"
-                        onClick={() => smoothScroll('#contact')}
-                    >
-                        Start
-                    </button>
                 </header>
 
 
-                <section className={'About container'}>
-                    <h3 className={'my-3'}>A Payment Server for Bitcoin</h3>
-                    <div className={'row my-3'}>
+                <Features/>
+                <About/>
 
-                        <div className={'col-sm-4'}>
-                            <img src={lockLogo} alt={'secure'}/>
-                            <h4>Secure</h4>
-                            <p>The payment server does not need to know your private keys, so your money can't be
-                                stolen.</p>
-                        </div>
-
-                        <div className={'col-sm-4'}>
-                            <img src={qrCode} alt={'easy'}/>
-                            <h4>Easy</h4>
-                            <p>A user-friendly Bitcoin checkout page for your customers.</p>
-                        </div>
-
-                        <div className={'col-sm-4'}>
-                            <img src={moneyLogo} alt={'vis'}/>
-                            <h4>Visibility</h4>
-                            <p>Manage, generate reports, and search for your invoices easily.</p>
-                        </div>
-                    </div>
-
-                    <div className={'row'}>
-                        <div className={'card m-2'}>
-                            <div className={'card-body'}>
-                                <div className={'card-title'}>
-                                    $5 / month
-                                </div>
-                                <p className={'card-text'}>
-                                    1 store
-                                    10,000 on-chain txs / month
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className={'cardmx-2 m-2 '}>
-                            <div className={'card-body'}>
-                                <div className={'card-title'}>
-                                    $10 / month
-                                </div>
-                                <p className={'card-text'}>
-                                    unlimited stores<br/>
-                                    unlimited on-chain txs<br/>
-                                    lightning enabled
-                                    <span>⚡</span>
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
+                <section className={'container'}>
+                    <Pricing/>
                 </section>
-
                 <section>
                     <div className={'container'}>
+
+
                         {formSuccess && (
                             <div className={'d-flex justify-content-center align-items-center'}>
                                 <div className={'alert alert-success alert-dismissible'}>
@@ -246,6 +191,8 @@ class App extends Component {
                                 <div></div>
                             </div>
                         }
+
+
                         <ContactForm
                             handleSubmit={this.handleSubmit}
                             handleChange={this.handleChange}
@@ -254,16 +201,7 @@ class App extends Component {
                     </div>
 
                 </section>
-
-               <footer>
-                   <div className={'row'}>
-                       <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons"
-                                             title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/"
-                                                                                       title="Flaticon">www.flaticon.com</a> is
-                           licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
-                                          title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-                   </div>
-               </footer>
+                <Footer/>
             </div>
         );
     }

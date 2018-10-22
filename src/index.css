@@ -4,6 +4,26 @@
     --darky: #282c34;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.line-through {
+
+    text-decoration: line-through;
+}
+
 @keyframes bouncing-loader {
     from {
         transform: translateY(0);

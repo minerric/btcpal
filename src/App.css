@@ -1,60 +1,54 @@
 
-.App {
-  text-align: center;
-}
-
-
 .App-title {
 
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    font-size: 3rem;
 }
+
+/*
+linear-gradient(125deg,#fff,#f3f3f3 41%,#ededed 0,#fff);
+ */
+
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
 }
 
 .App-header {
-  background-color: var(--darky);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+    background: linear-gradient(125deg, #333, #999 41%, #333 0, #999);
+    min-height: 80vh;
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 section {
-  padding-top: 3rem;
-  min-height: 80vh;
+    padding-top: 3rem;
 }
-.About {
-  min-height: 120vmin;
-
-}
-
-.Contact {
-
-  height: 100vmin;
-}
-
 
 footer {
 
-  min-height: 7rem;
-  background-color: var(--darky);
+    min-height: 7rem;
+    background-color: var(--darky);
+}
+
+@media all and (min-width: 992px) {
+
+    .App-title {
+        font-size: 4rem;
+    }
 }
