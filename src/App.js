@@ -166,34 +166,8 @@ class App extends Component {
                     <div className={'container'}>
 
 
-                        {formSuccess && (
-                            <div className={'d-flex justify-content-center align-items-center'}>
-                                <div className={'alert alert-success alert-dismissible'}>
-                                    <b>Success</b>
-                                </div>
-                            </div>
-                        )}
-                        {formError && (
-                            <div className={'d-flex justify-content-center align-items-center'}>
-                                <div className={'alert alert-danger alert-dismissible'} style={{width: '10rem'}}>
-                                    <b>Error!</b>
-                                </div>
-                            </div>
-                        )
-
-                        }
-
-                        {
-                            formPending &&
-                            <div className={'bouncing-loader d-flex justify-content-center align-items-center'}>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                        }
-
-
                         <ContactForm
+                            {...this.state}
                             handleSubmit={this.handleSubmit}
                             handleChange={this.handleChange}
                         />

@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 
 import './ContactForm.css'
 
-function ContactForm({handleSubmit, handleChange}) {
+function ContactForm({name, phone, email, website, subject, handleSubmit, handleChange, formError, formSuccess, formPending, message}) {
     return (
         <div className="form-container" id={'Contact'}>
             <form id="contact" onSubmit={handleSubmit}>
                 <h3 className={'my-3'}>Contact</h3>
-                <h6>Contact us today, and get reply with in 24 hours!</h6>
                 <fieldset>
                     <input
                         name={'name'}
                         id={'name'}
+                        value={name}
                         className={'form-control'}
                         placeholder="Your name"
                         type="text"
@@ -24,6 +24,7 @@ function ContactForm({handleSubmit, handleChange}) {
                 <fieldset>
                     <input
                         name={'email'}
+                        value={email}
                         className={'form-control'}
                         placeholder="Your Email Address"
                         type="email"
@@ -35,6 +36,7 @@ function ContactForm({handleSubmit, handleChange}) {
                 <fieldset>
                     <input
                         name={'phone'}
+                        value={phone}
                         className={'form-control'}
                         placeholder="Your Phone Number"
                         type="tel"
@@ -45,6 +47,7 @@ function ContactForm({handleSubmit, handleChange}) {
                 <fieldset>
                     <input
                         name={'website'}
+                        value={website}
                         className={'form-control'}
                         placeholder="Your Web Site starts with http://"
                         type="url"
@@ -55,6 +58,7 @@ function ContactForm({handleSubmit, handleChange}) {
                 <fieldset>
                     <input
                         name={'subject'}
+                        value={subject}
                         className={'form-control'}
                         placeholder={'Subject'}
                         tabIndex={'5'}
@@ -66,17 +70,25 @@ function ContactForm({handleSubmit, handleChange}) {
                         name={'message'}
                         className={'form-control'}
                         rows={'5'}
-                        placeholder="Type your Message Here...." tabIndex="6">
+                        id={'message'}
+                        placeholder="Type your Message Here...."
+                        onChange={handleChange}
+                        tabIndex="6"
+                    >
 
+                        {message}
                     </textarea>
                 </fieldset>
                 <fieldset>
                     <div
                         tabIndex={'8'}
-                        className="g-recaptcha" data-sitekey={process.env.REACT_APP_RECAPTCHA_KEY}></div>
+                        className="g-recaptcha" data-sitekey={process.env.REACT_APP_RECAPTCHA_KEY}>
+
+                    </div>
                 </fieldset>
 
                 <fieldset>
+
                     <button
                         tabIndex={'9'}
                         className={'btn btn-primary'}
@@ -86,20 +98,47 @@ function ContactForm({handleSubmit, handleChange}) {
                 </fieldset>
 
 
+                {formSuccess && (
+                    <div className={'d-flex justify-content-center align-items-center'}>
+                        <div className={'alert alert-success alert-dismissible'}>
+                            <b>Success</b>
+                        </div>
+                    </div>
+                )}
+                {formError && (
+                    <div className={'d-flex justify-content-center align-items-center'}>
+                        <div className={'alert alert-danger alert-dismissible'} style={{width: '10rem'}}>
+                            <b>Error!</b>
+                        </div>
+                    </div>
+                )
+
+                }
+
+                {
+                    formPending &&
+                    <div className={'bouncing-loader d-flex justify-content-center align-items-center'}>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                }
+
+
             </form>
 
 
-           <div className={'my-3'}>
-               <h5>Not Working?</h5>
-               <a
-                   className={'btn btn-info btn-sm'}
-                   href={'mailto:jchimien@gmail.com'}>
-                   <i className={'fa fa-envelope'}>
+            <div className={'my-3'}>
+                <h5>Not Working?</h5>
+                <a
+                    className={'btn btn-info btn-sm'}
+                    href={'mailto:jchimien@gmail.com'}>
+                    <i className={'fa fa-envelope'}>
 
-                   </i>
-                   Email
-               </a>
-           </div>
+                    </i>
+                    Email
+                </a>
+            </div>
         </div>
     );
 }

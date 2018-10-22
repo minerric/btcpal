@@ -108,8 +108,7 @@ function onListening() {
 // Create a new MongoClient
 async function main() {
 
-    const dbName = 'regisration';
-
+    const dbName = 'registration';
 
     const client = await mongoConnect();
     console.log("Connected successfully to server");
