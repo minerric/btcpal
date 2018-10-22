@@ -28,7 +28,7 @@ app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'build')));
 
 const corsOptions = {
-    origin: 'https://info.btcpal.online',
+    origin: 'https://register.btcpal.online',
     optionsSuccessStatus: 200
 };
 
