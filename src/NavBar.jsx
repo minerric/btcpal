@@ -6,7 +6,7 @@ import {smoothScroll} from "./utils";
 function NavBar(props) {
     return (
         <nav className="Navbar container d-flex justify-content-between align-items-center py-3">
-            <a className="navbar-brand" href="#page-top">BTC PAL</a>
+            <h1 className="navbar-brand nav-link pointer" href="#page-top">BTC PAL</h1>
             <div className="navbar-nav text-right d-inline-flex justify-content-end flex-row">
                 <span className="nav-item pointer nav-link m-2"
                    onClick={() => smoothScroll('#Features')}

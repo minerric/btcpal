@@ -102,6 +102,9 @@ function ContactForm({name, phone, email, website, subject, handleSubmit, handle
                     <div className={'d-flex justify-content-center align-items-center'}>
                         <div className={'alert alert-success alert-dismissible'}>
                             <b>Success</b>
+                            <p>
+                                Please check email for instructions!
+                            </p>
                         </div>
                     </div>
                 )}

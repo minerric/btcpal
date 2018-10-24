@@ -9,7 +9,7 @@ function Pricing(props) {
     return (
         <div className={'Pricing'} id={'Pricing'}>
 
-            <h3 className={'my-3'}>Pricing</h3>
+            <h2 className={'my-3'}>Pricing</h2>
             <div className={'row d-flex justify-content-center align-items-top'}>
                 <div className={'card text-left m-2'}>
                     <h4 className={'card-header d-flex align-items-center justify-content-space-between'}>
@@ -61,7 +61,7 @@ function Pricing(props) {
                         <div className={'card-text'}>
                             <ul>
                                 <li>
-                                    Account with 10 stores and 1000 apps
+                                    Account with 10 stores and 100+ apps
                                 </li>
                                 <li>
                                     Shared managed BTC Server

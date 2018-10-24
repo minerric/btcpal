@@ -15,6 +15,24 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: bold;
 }
 
+section {
+    padding-top: 50px;
+}
+
+section h2 {
+
+    text-align: center;
+    padding: 2rem 0;
+}
+
+p {
+    font-size: 20px;
+}
+
+p.small {
+    font-size: 16px;
+}
+
 .pointer {
     cursor: pointer;
 }
@@ -58,4 +76,12 @@ h1,h2,h3,h4,h5,h6 {
 
 .bouncing-loader > div:last-child {
     animation-delay: 0.4s;
+}
+
+
+@media all and (min-width: 476px) {
+
+    section {
+        padding-top: 100px;
+    }
 }

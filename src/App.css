@@ -18,7 +18,7 @@ linear-gradient(125deg,#fff,#f3f3f3 41%,#ededed 0,#fff);
 
 .App-header {
 
-    background: linear-gradient(125deg, #333, #999 41%, #333 0, #999);
+    background: var(--darky);
     min-height: 80vh;
     color: white;
 }
@@ -36,14 +36,19 @@ linear-gradient(125deg,#fff,#f3f3f3 41%,#ededed 0,#fff);
     }
 }
 
-section {
-    padding-top: 3rem;
-}
+
 
 footer {
 
     min-height: 7rem;
     background-color: var(--darky);
+}
+
+@media all and (min-width: 900px) {
+
+    .App-header {
+        background: linear-gradient(125deg, #333, #999 41%, #333 0, #999);
+    }
 }
 
 @media all and (min-width: 992px) {

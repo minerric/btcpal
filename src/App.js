@@ -137,7 +137,7 @@ class App extends Component {
 
         return (
             <div className="App">
-                <header className="App-header">
+                <header className="App-header container-fluid">
                 <NavBar/>
 
                     <div className={'row d-flex justify-content-around my-3'}>
@@ -146,7 +146,7 @@ class App extends Component {
                             <h1 className={'App-title'}>BTC PAL</h1>
                             <h6 className={'my-3'}>
                                 Accept Bitcoin and
-                                <span role={'img'} aria-label={'lightning'}>⚡</span>
+                                <span role={'img'} aria-label={'lightning'} className={'px-1'}>⚡</span>
                                 Lightning Payments for your business
                             </h6>
                             <ContactBtn/>
