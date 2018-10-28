@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const logger = require('morgan');
@@ -7,7 +6,6 @@ const compression = require('compression');
 const helmet = require('helmet');
 
 const usersRouter = require('./lib/users/users.router');
-const purchasesRouter = require('./lib/purchases/purchases.router');
 const app = express();
 
 // Gzip all responses
@@ -38,6 +36,6 @@ app.use('/users', cors(corsOptions), usersRouter);
 app.get('/healthCheck', cors(), (req, res) => res.status(200).send('OK'));
 app.get('/health', cors(), (req, res) => res.status(200).send('OK'));
 
-app.use('/purchases', cors(), purchasesRouter);
+
 
 module.exports = app;
