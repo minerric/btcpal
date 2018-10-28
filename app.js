@@ -38,6 +38,6 @@ app.use('/users', cors(corsOptions), usersRouter);
 app.get('/healthCheck', cors(), (req, res) => res.status(200).send('OK'));
 app.get('/health', cors(), (req, res) => res.status(200).send('OK'));
 
-app.use('/purchases', purchasesRouter);
+app.use('/purchases', cors(), purchasesRouter);
 
 module.exports = app;
