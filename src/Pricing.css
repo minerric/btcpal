@@ -3,3 +3,7 @@
     list-style: none;
 }
 
+
+.Pricing .card {
+    max-width: 400px;
+}

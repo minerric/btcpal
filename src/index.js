@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'whatwg-fetch';
+import 'jquery/dist/jquery.min'
+import 'bootstrap/dist/js/bootstrap.min';
 
 
 ReactDOM.render(<App />, document.getElementById('root'));

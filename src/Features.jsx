@@ -8,6 +8,7 @@ function Features(props) {
     return (
         <section className={'Features container'} id={'Features'}>
             <h2 className={'my-3'}>A Payment Server for Bitcoin</h2>
+            <hr/>
             <div className={'row my-3 text-center'}>
 
                 <div className={'col-sm-4'}>

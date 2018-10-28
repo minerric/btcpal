@@ -82,6 +82,8 @@ class App extends Component {
         this.setState({
             ...this.state,
             formPending: true,
+            formError: null,
+            formSuccess: null
         }, () => {
 
             return window.fetch('https://btcpal.online:5555/users', {
@@ -138,17 +140,16 @@ class App extends Component {
         return (
             <div className="App">
                 <header className="App-header container-fluid">
-                <NavBar/>
+                    <NavBar/>
 
                     <div className={'row d-flex justify-content-around my-3'}>
                         <img src={btc} className="App-logo" alt="logo"/>
                         <div className={'ml-3'}>
-                            <h1 className={'App-title'}>BTC PAL</h1>
-                            <h6 className={'my-3'}>
+                            <h5 className={'my-3'} style={{maxWidth: '400px'}}>
                                 Accept Bitcoin and
                                 <span role={'img'} aria-label={'lightning'} className={'px-1'}>⚡</span>
                                 Lightning Payments for your business
-                            </h6>
+                            </h5>
                             <ContactBtn/>
                         </div>
                     </div>

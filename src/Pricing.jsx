@@ -10,6 +10,7 @@ function Pricing(props) {
         <div className={'Pricing'} id={'Pricing'}>
 
             <h2 className={'my-3'}>Pricing</h2>
+            <hr/>
             <div className={'row d-flex justify-content-center align-items-top'}>
                 <div className={'card text-left m-2'}>
                     <h4 className={'card-header d-flex align-items-center justify-content-space-between'}>
@@ -21,7 +22,12 @@ function Pricing(props) {
                         <div className={'card-text'}>
                             <ul>
                                 <li>
-                                    Account with 1 store & 5 Apps
+                                    <b style={{fontWeight: '600'}}>
+                                        14 day free trial
+                                    </b>
+                                </li>
+                                <li>
+                                    Account with 1 App
                                 </li>
                                 <li>
                                     Shared managed BTC Server
@@ -31,16 +37,12 @@ function Pricing(props) {
                                     for instant payments
                                 </li>
                                 <li>
-                                    Use HD Wallet to recieve payments
+                                    Use HD Wallet to receive payments
                                 </li>
                                 <li>
-                                    Track invoices & transactions
+                                    Track invoices
                                 </li>
-                                <li>
-                                    <b>
-                                        14 day free trial
-                                    </b>
-                                </li>
+
                             </ul>
 
                         </div>
@@ -61,7 +63,7 @@ function Pricing(props) {
                         <div className={'card-text'}>
                             <ul>
                                 <li>
-                                    Account with 10 stores and 100+ apps
+                                    Account with 5 Apps and 1000 invoices
                                 </li>
                                 <li>
                                     Shared managed BTC Server
@@ -71,13 +73,13 @@ function Pricing(props) {
                                     for instant payments
                                 </li>
                                 <li>
-                                    Use HD Wallet to recieve payments
+                                    Use HD Wallet to receive payments
                                 </li>
                                 <li>
-                                    Track invoices & transactions
+                                    Track invoices
                                 </li>
                                 <li>
-                                    Testnet and customer support
+                                    Integrated Testnet and customer support
                                 </li>
                             </ul>
 
@@ -101,6 +103,9 @@ function Pricing(props) {
                             <ul>
                                 <li>
                                     Self hosted BTCPAY server
+                                </li>
+                                <li>
+                                    Customized Checkout Experience
                                 </li>
                                 <li>
                                     Unlimited Stores / Apps

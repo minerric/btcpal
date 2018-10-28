@@ -44,12 +44,6 @@ footer {
     background-color: var(--darky);
 }
 
-@media all and (min-width: 900px) {
-
-    .App-header {
-        background: linear-gradient(125deg, #333, #999 41%, #333 0, #999);
-    }
-}
 
 @media all and (min-width: 992px) {
 

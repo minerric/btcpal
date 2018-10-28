@@ -7,6 +7,7 @@ const compression = require('compression');
 const helmet = require('helmet');
 
 const usersRouter = require('./lib/users/users.router');
+const purchasesRouter = require('./lib/purchases/purchases.router');
 const app = express();
 
 // Gzip all responses
@@ -35,5 +36,8 @@ const corsOptions = {
 app.use('/users', cors(corsOptions), usersRouter);
 
 app.get('/healthCheck', cors(), (req, res) => res.status(200).send('OK'));
+app.get('/health', cors(), (req, res) => res.status(200).send('OK'));
+
+app.use('/purchases', purchasesRouter);
 
 module.exports = app;

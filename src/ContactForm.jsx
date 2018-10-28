@@ -6,8 +6,9 @@ import './ContactForm.css'
 function ContactForm({name, phone, email, website, subject, handleSubmit, handleChange, formError, formSuccess, formPending, message}) {
     return (
         <div className="form-container" id={'Contact'}>
+            <h2 className={'my-3'}>Contact</h2>
+            <hr/>
             <form id="contact" onSubmit={handleSubmit}>
-                <h3 className={'my-3'}>Contact</h3>
                 <fieldset>
                     <input
                         name={'name'}
@@ -93,6 +94,7 @@ function ContactForm({name, phone, email, website, subject, handleSubmit, handle
                         tabIndex={'9'}
                         className={'btn btn-primary'}
                         name="submit"
+                        disabled={formPending}
                         type="submit">Submit
                     </button>
                 </fieldset>
@@ -131,7 +133,7 @@ function ContactForm({name, phone, email, website, subject, handleSubmit, handle
             </form>
 
 
-            <div className={'my-3'}>
+            {formError && <div className={'my-3'}>
                 <h5>Not Working?</h5>
                 <a
                     className={'btn btn-info btn-sm'}
@@ -141,7 +143,7 @@ function ContactForm({name, phone, email, website, subject, handleSubmit, handle
                     </i>
                     Email
                 </a>
-            </div>
+            </div>}
         </div>
     );
 }
