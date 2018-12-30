@@ -24,7 +24,7 @@ function Footer(props) {
                 <div className={'row my-3'}>
 
 
-                    <img src={lightningQr} alt={'qr'}/>
+                    {/*<img src={lightningQr} alt={'qr'}/>*/}
                 </div>
 
                 <div className={'row'}>
