@@ -15,10 +15,8 @@ services:
   web:
     container_name: btcpal_register
     build: .
-    depends_on:
-      - db
     external_links:
-      - mongod:db
+      - mongo:db
     restart: always
     networks:
     - generated_default
