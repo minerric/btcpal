@@ -17,7 +17,7 @@ services:
     build: .
     external_links:
       - mongod:db
-    restart: unless-stopped
+    restart: always
     networks:
     - generated_default
     env_file:
