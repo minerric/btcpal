@@ -25,6 +25,9 @@ services:
     ports:
     - "${APP_PORT}:${APP_PORT}"
 networks:
+  lightning-api-purchase_lightning:
+    external:
+      name: lightning-api-purchase_lightning
   generated_default:
     external:
       name: generated_default
