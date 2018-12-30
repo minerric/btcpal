@@ -86,7 +86,7 @@ class App extends Component {
             formSuccess: null
         }, () => {
 
-            return window.fetch('https://btcpal.online:5555/users', {
+            return window.fetch('https://register.btcpal.online/api/register', {
                 method: 'post',
                 body: JSON.stringify({
                     email,
@@ -134,8 +134,6 @@ class App extends Component {
     }
 
     render() {
-
-        const {formPending, formSuccess, formError} = this.state;
 
         return (
             <div className="App">

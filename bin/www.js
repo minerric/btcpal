@@ -10,32 +10,23 @@ var app = require('../app');
 const fs = require('fs');
 var debug = require('debug')('btcpalbe:server');
 var https = require('https');
-const mongoConnect = require('./mongo.connect').connect
+const mongoConnect = require('../lib/mongo.connect').connect
 
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.APP_PORT || '3000');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
-let server;
-if (process.env.HTTP_SERVER_ENABLED) {
-    var http = require('http');
+var http = require('http');
 
-    server = http.createServer(app);
-} else {
-    const options = {
-        key: fs.readFileSync('./key.pem'),
-        cert: fs.readFileSync('./cert.pem'),
-    }
-    server = https.createServer(options, app);
+const server = http.createServer(app);
 
-}
 
 /**
  * Listen on provided port, on all network interfaces.

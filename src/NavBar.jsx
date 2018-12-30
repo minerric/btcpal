@@ -8,7 +8,7 @@ function NavBar(props) {
         <nav className="Navbar navbar navbar-expand-md py-3">
 
 
-            <h1 className=" nav-link pointer" href="#page-top">BTC PAL</h1>
+            <h1 className=" nav-link pointer" href="https://btcpal.online">BTC PAL</h1>
             <button className="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">

@@ -3,5 +3,5 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm i
 COPY . .
-EXPOSE 5555
+EXPOSE ${APP_PORT}
 CMD npm run start:be
