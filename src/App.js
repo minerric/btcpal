@@ -86,7 +86,7 @@ class App extends Component {
             formSuccess: null
         }, () => {
 
-            return window.fetch('https://register.btcpal.online/api/register', {
+            return window.fetch(process.env.REACT_REGISTER_URL, {
                 method: 'post',
                 body: JSON.stringify({
                     email,

@@ -7,9 +7,6 @@ require('dotenv').load();
 
 
 var app = require('../app');
-const fs = require('fs');
-var debug = require('debug')('btcpalbe:server');
-var https = require('https');
 const mongoConnect = require('../lib/mongo.connect').connect
 
 
