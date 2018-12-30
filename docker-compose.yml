@@ -1,20 +1,22 @@
 version: '3.1'
 services:
-  db:
-    image: mongo
-    container_name: mongo
-    restart: always
-    volumes:
-      - ./data/db:/data/db
-    ports:
-      - 27017:27017
-    env_file:
-      - .env
-    networks:
-      - generated_default
+#  db:
+#    image: mongo
+#    container_name: mongo
+#    restart: always
+#    volumes:
+#      - ./data/db:/data/db
+#    ports:
+#      - 27017:27017
+#    env_file:
+#      - .env
+#    networks:
+#      - generated_default
   web:
     container_name: btcpal_register
     build: .
+    links:
+      - mongo:db
     depends_on:
     - db
     restart: unless-stopped
