@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4b6b385-4561-45ca-81a1-9dcdec7a0436" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-    </list>
+    <list default="true" id="c4b6b385-4561-45ca-81a1-9dcdec7a0436" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -90,7 +87,7 @@
           <entry key="env" value="371" />
           <entry key="gitignore" value="5" />
           <entry key="html" value="33" />
-          <entry key="js" value="15739" />
+          <entry key="js" value="15743" />
           <entry key="json" value="263" />
           <entry key="jsx" value="2075" />
           <entry key="sh" value="124" />
@@ -108,7 +105,7 @@
           <entry key="HTML" value="33" />
           <entry key="JSON" value="263" />
           <entry key="JSX Harmony" value="2075" />
-          <entry key="JavaScript" value="16917" />
+          <entry key="JavaScript" value="16921" />
           <entry key="PLAIN_TEXT" value="230" />
           <entry key="TypeScript" value="252" />
           <entry key="YAML" value="878" />
@@ -131,8 +128,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+            <state relative-caret-position="190">
+              <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -435,7 +432,7 @@
       <workItem from="1544665108910" duration="4175000" />
       <workItem from="1544710041968" duration="13000" />
       <workItem from="1544721691744" duration="1189000" />
-      <workItem from="1546186421233" duration="5418000" />
+      <workItem from="1546186421233" duration="5678000" />
     </task>
     <servers />
   </component>
@@ -472,11 +469,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91542000" />
+    <option name="totallyTimeSpent" value="91802000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="25" y="23" width="1194" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.112847224" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -860,8 +856,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+        <state relative-caret-position="190">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
         </state>
       </provider>
     </entry>

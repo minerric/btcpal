@@ -12,12 +12,12 @@ const app = express();
 app.use(compression());
 app.use(express.static(path.join(__dirname, 'build')));
 // Set header with API response time
-app.use(async (ctx, next) => {
-    const start = Date.now();
-    await next();
-    const ms = Date.now() - start;
-    ctx.set('X-Response-Time', `${ms}ms`);
-});
+// app.use(async (ctx, next) => {
+//     const start = Date.now();
+//     await next();
+//     const ms = Date.now() - start;
+//     ctx.set('X-Response-Time', `${ms}ms`);
+// });
 
 app.use(helmet());
 app.use(logger('dev'));
