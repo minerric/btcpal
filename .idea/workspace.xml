@@ -36,7 +36,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="CNAME" value="2" />
-          <entry key="Dockerfile" value="8" />
+          <entry key="Dockerfile" value="9" />
           <entry key="css" value="23" />
           <entry key="dockerignore" value="1" />
           <entry key="env" value="36" />
@@ -44,7 +44,7 @@
           <entry key="html" value="9" />
           <entry key="ico" value="1" />
           <entry key="js" value="143" />
-          <entry key="json" value="14" />
+          <entry key="json" value="15" />
           <entry key="jsx" value="42" />
           <entry key="md" value="3" />
           <entry key="sh" value="1" />
@@ -59,10 +59,10 @@
           <entry key=".env file" value="13" />
           <entry key="Bash" value="1" />
           <entry key="CSS" value="23" />
-          <entry key="Dockerfile" value="8" />
+          <entry key="Dockerfile" value="9" />
           <entry key="HTML" value="9" />
           <entry key="Image" value="1" />
-          <entry key="JSON" value="14" />
+          <entry key="JSON" value="15" />
           <entry key="JSX Harmony" value="42" />
           <entry key="JavaScript" value="159" />
           <entry key="Markdown" value="3" />
@@ -81,14 +81,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="CNAME" value="18" />
-          <entry key="Dockerfile" value="128" />
+          <entry key="Dockerfile" value="147" />
           <entry key="css" value="1135" />
           <entry key="dockerignore" value="8" />
           <entry key="env" value="371" />
           <entry key="gitignore" value="5" />
           <entry key="html" value="33" />
           <entry key="js" value="15743" />
-          <entry key="json" value="263" />
+          <entry key="json" value="265" />
           <entry key="jsx" value="2075" />
           <entry key="sh" value="124" />
           <entry key="ts" value="252" />
@@ -101,9 +101,9 @@
           <entry key=".env file" value="172" />
           <entry key="Bash" value="124" />
           <entry key="CSS" value="1135" />
-          <entry key="Dockerfile" value="128" />
+          <entry key="Dockerfile" value="147" />
           <entry key="HTML" value="33" />
-          <entry key="JSON" value="263" />
+          <entry key="JSON" value="265" />
           <entry key="JSX Harmony" value="2075" />
           <entry key="JavaScript" value="16921" />
           <entry key="PLAIN_TEXT" value="230" />
@@ -125,11 +125,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-219">
               <caret line="14" selection-start-line="14" selection-start-column="3" selection-end-line="19" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -222,7 +231,6 @@
         <option value="$PROJECT_DIR$/lib/users/users.controller.ts" />
         <option value="$PROJECT_DIR$/lib/users/users.dao.js" />
         <option value="$PROJECT_DIR$/bin/mongo.connect.js" />
-        <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/run.sh" />
         <option value="$PROJECT_DIR$/lib/mongo.connect.js" />
         <option value="$PROJECT_DIR$/test-connect.js" />
@@ -231,10 +239,11 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/bin/www.js" />
         <option value="$PROJECT_DIR$/lib/users/users.router.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Footer.jsx" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -432,7 +441,7 @@
       <workItem from="1544665108910" duration="4175000" />
       <workItem from="1544710041968" duration="13000" />
       <workItem from="1544721691744" duration="1189000" />
-      <workItem from="1546186421233" duration="6007000" />
+      <workItem from="1546186421233" duration="6297000" />
     </task>
     <servers />
   </component>
@@ -469,12 +478,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92131000" />
+    <option name="totallyTimeSpent" value="92421000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="25" y="23" width="1194" height="777" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.112847224" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1857639" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -801,13 +810,6 @@
     <entry file="file://$PROJECT_DIR$/build/CNAME">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
@@ -823,13 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-523">
-          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -858,6 +853,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-219">
           <caret line="14" selection-start-line="14" selection-start-column="3" selection-end-line="19" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
