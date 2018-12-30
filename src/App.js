@@ -23,14 +23,14 @@ function checkStatus(response) {
     }
 }
 
-function validateRecaptcha() {
-    const response = window.grecaptcha.getResponse();
-
-    return {
-        success: 0 < response.length,
-        response,
-    }
-}
+// function validateRecaptcha() {
+//     const response = window.grecaptcha.getResponse();
+//
+//     return {
+//         success: 0 < response.length,
+//         response,
+//     }
+// }
 
 
 class App extends Component {
@@ -70,14 +70,14 @@ class App extends Component {
 
         const {email, message, phone, name, website, subject} = this.state;
 
-        const {success, response} = validateRecaptcha();
-        if (!(success && response)) {
-
-            return this.setState({
-                formPending: false,
-                formError: 'invalid captcha'
-            });
-        }
+        // const {success, response} = validateRecaptcha();
+        // if (!(success && response)) {
+        //
+        //     return this.setState({
+        //         formPending: false,
+        //         formError: 'invalid captcha'
+        //     });
+        // }
 
         this.setState({
             ...this.state,
@@ -86,7 +86,7 @@ class App extends Component {
             formSuccess: null
         }, () => {
 
-            return window.fetch(process.env.REACT_REGISTER_URL, {
+            return window.fetch('/api/users/register', {
                 method: 'post',
                 body: JSON.stringify({
                     email,
@@ -95,7 +95,6 @@ class App extends Component {
                     phone,
                     name,
                     website,
-                    recaptcha: response
                 }),
                 headers: {
                     'content-type': "application/json",

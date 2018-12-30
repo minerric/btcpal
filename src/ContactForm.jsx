@@ -80,18 +80,11 @@ function ContactForm({name, phone, email, website, subject, handleSubmit, handle
                         {message}
                     </textarea>
                 </fieldset>
-                <fieldset>
-                    <div
-                        tabIndex={'8'}
-                        className="g-recaptcha" data-sitekey={process.env.REACT_APP_RECAPTCHA_KEY}>
-
-                    </div>
-                </fieldset>
 
                 <fieldset>
 
                     <button
-                        tabIndex={'9'}
+                        tabIndex={'8'}
                         className={'btn btn-primary'}
                         name="submit"
                         disabled={formPending}
