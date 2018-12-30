@@ -30,6 +30,11 @@ app.get(['/health', '/healthCheck'], (req, res) => {
     res.status(200).send('OK')
 })
 app.use('/api/users', usersRouter);
+
+app.get('/', (req, res) => {
+
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
 // error handler
 app.use(function (err, req, res, next) {
 
