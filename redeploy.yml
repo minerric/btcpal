@@ -1,0 +1,10 @@
+---
+- name: redploy app
+  hosts: btcpayserver
+  # remote_user: root
+  become: yes
+  gather_facts: yes
+  roles:
+  - btcpal
+
+

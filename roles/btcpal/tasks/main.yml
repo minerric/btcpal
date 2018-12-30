@@ -1,0 +1,15 @@
+---
+- name: pull
+  args:
+    chdir: ./btcpal
+  command: git pull origin master
+
+- name: stop docker
+  command: docker-compose down
+  args:
+    chdir: ./btcpal
+
+- name: start
+  args:
+    chdir: ./btcpal
+  command: docker-compose up --build -d

@@ -8,11 +8,12 @@ function Purchase({item = 'personal'}) {
 
 
     return (
-        <form method="POST" action="https://btcpal.online/apps/2HmhG1yHz7fYpTRtVF7NLL4gxyJ5/pos">
+
+        <form method="POST" action="https://btcpal.online/apps/2bEJNgr2GZNwWbNDk35iXRofifik/pos">
             {/*<input type="email" className={'form-control'} name="email"/>*/}
             {/*<input type="hidden" name="orderId" value="CustomOrderId"/>*/}
-            <input type="hidden" name="notificationUrl" value={`https://btcpal.online:5555/purchases/notification/${item}`}/>
-            <input type="hidden" name="redirectUrl" value={`https://btcpal.online:5555/purchases/redirect/${item}`}/>
+            <input type="hidden" name="notificationUrl" value={`https://register.btcpal.online/api/purchases/${item}`}/>
+            <input type="hidden" name="redirectUrl" value={`https://register.btcpal.online/api/purchases/redirect/${item}`}/>
             <ContactBtn klass={'card-link mr-2'}/>
 
             <button type="submit"
