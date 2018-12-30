@@ -19,7 +19,7 @@ function Footer(props) {
                 </div>
                 <div className={'row'}>
                     <b>Uri</b>
-                    <code className={'pl-2'}>02605edcea45a12d160e154c70f35ed6b4d2e136b3f013c56586f7b41371c1bf95@74.207.232.172:9735</code>
+                    <code className={'pl-2'}>025c85c8dd277a324f35158a471a4b0ca83673f3bf97a272c36cded48c5e80235d@74.207.232.172:9735</code>
                 </div>
                 <div className={'row my-3'}>
 
