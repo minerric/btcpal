@@ -27,8 +27,6 @@
     "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
-    "deploy": "gh-pages -d build",
-    "predeploy": "npm run build && echo 'register.btcpal.online' >> build/CNAME",
     "start:be": "node bin/www",
     "start": "react-scripts start",
     "build": "react-scripts build",
